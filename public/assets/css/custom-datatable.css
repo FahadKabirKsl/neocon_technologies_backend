@@ -1,0 +1,20 @@
+.clickable-row:hover {
+    background-color: #FFE0E0 ;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.tr-head{
+    color: #D9171A;
+}
+.newspaper-url-container {
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.newspaper-url-container a {
+    text-decoration: none;
+}
+.newspaper-url-container a:hover {
+    text-decoration: underline;
+}
