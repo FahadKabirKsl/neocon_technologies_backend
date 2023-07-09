@@ -68,7 +68,7 @@ class AuthController extends Controller
     }
     public function logout()
     {
-        auth()->user()->token()->delete();
+        auth()->user()->tokens()->delete();
         return [
             "message" => "Admin Logged Out Successfully"
         ];
