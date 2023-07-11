@@ -39,37 +39,31 @@
                             <table class="table display" id="basic-1" style="font-size:12px">
                                 <thead>
                                     <tr>
-                                        <th>Tags</th>
-                                        <th>Image</th>
                                         <th>Name</th>
-                                        <th>Title</th>
                                         <th>Description</th>
-                                        <th>Link</th>
+                                        <th>Sub Name</th>
+                                        <th>Sub Title</th>
+                                        <th>Image</th>
+                                        <th>Sub Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($services as $service)
-                                        <tr class="clickable-row">
+                                        <tr>
                                             <td>
-                                                @if ($service->tags)
+                                                @if ($service->name)
                                                     @php
-                                                        $tags = json_decode($service->tags);
+                                                        $name = json_decode($service->name);
                                                     @endphp
-                                                    @if ($tags)
-                                                        @foreach ($tags as $tag)
+                                                    @if ($name)
+                                                        @foreach ($name as $tag)
                                                             <button type="button" style="font-size:12px"
-                                                                class="btn btn-outline-danger my-1">{{ $tag->value }}</button>
+                                                                class="btn btn-orange my-1">{{ $tag->value }}</button>
                                                         @endforeach
                                                     @endif
                                                 @endif
                                             </td>
-                                            <td>
-                                                <img src="{{ asset('storage/' . $service->image) }}" alt="Services Image"
-                                                    width="90">
-                                            </td>
-                                            <td>{{ $service->name }}</td>
-                                            <td>{{ $service->title }}</td>
                                             <td>
                                                 <div class="collapse-content" id="collapseContent{{ $service->id }}">
                                                     {!! $service->description !!}
@@ -79,7 +73,13 @@
                                                     <span id="collapseLinkText{{ $service->id }}">See More</span>
                                                 </div>
                                             </td>
-                                            <td>{{ $service->link }}</td>
+                                            <td>{{ $service->subName }}</td>
+                                            <td>{{ $service->subTitle }}</td>
+                                            <td>
+                                                <img src="{{ asset('storage/' . $service->image) }}" alt="Services Image"
+                                                    width="90">
+                                            </td>
+                                            <td>{{ $service->subDesc }}</td>
                                             <td>
                                                 <div class="d-flex">
                                                     <div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,3 +13,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('/registration', [AuthController::class, 'registration']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
+
+
+//service
+Route::prefix('service')->group(function () {
+    Route::get('/', [ServiceController::class, 'index']);
+    Route::post('/store', [ServiceController::class, 'store']);
+    Route::post('/{id}', [ServiceController::class, 'update']);
+    Route::delete('/delete/{id}', [ServiceController::class, 'destroy']);
+});

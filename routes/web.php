@@ -21,9 +21,9 @@ Route::middleware('auth')->group(function () {
 
     //Service
     Route::prefix('service')->group(function () {
+        Route::get('/index', [ServiceController::class, 'index'])->name('service.index');
         Route::get('/create', [ServiceController::class, 'create'])->name('service.create');
         Route::post('/store', [ServiceController::class, 'store'])->name('service.store');
-        Route::get('/index', [ServiceController::class, 'index'])->name('service.index');
         Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
         Route::put('/{id}', [ServiceController::class, 'update'])->name('service.update');
         Route::delete('/delete/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
