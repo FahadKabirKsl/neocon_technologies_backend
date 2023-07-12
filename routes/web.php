@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
         Route::put('/{id}', [EmployeeController::class, 'update'])->name('employee.update');
         Route::delete('/delete/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+    });
+    //Service
+    Route::prefix('service')->group(function () {
+        Route::get('/index', [ServiceController::class, 'index'])->name('service.index');
+        Route::get('/create', [ServiceController::class, 'create'])->name('service.create');
+        Route::post('/store', [ServiceController::class, 'store'])->name('service.store');
+        Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
+        Route::put('/{id}', [ServiceController::class, 'update'])->name('service.update');
+        Route::delete('/delete/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
     });
 });
 

@@ -55128,13 +55128,17 @@ span.twitter-typeahead .tt-suggestion:active {
 /**=====================
     60. RTL CSS Ends
 ==========================**/
+
+/*====================
+    Custom css
+====================== */
 .collapse-content {
     max-height: 100px;
     overflow: hidden;
     transition: max-height 0.5s ease;
 }
 .collapse-link {
-    color: #d9171a;
+    color: #fe3b00;
     cursor: pointer;
 }
 .btn-orange {
@@ -55142,5 +55146,6 @@ span.twitter-typeahead .tt-suggestion:active {
     color: white;
 }
 .btn-orange:hover {
-    background-color: #fe3b00;
+    background-color: black;
+    color:white;
 }
