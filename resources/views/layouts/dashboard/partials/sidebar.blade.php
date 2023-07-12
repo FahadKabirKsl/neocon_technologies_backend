@@ -38,6 +38,14 @@
                     </li> --}}
                     <li class="dropdown">
                         <a class="nav-link menu-title " href="javascript:void(0)"><i
+                                data-feather="airplay"></i><span>Employee</span></a>
+                        <ul class="nav-submenu menu-content" style="display: none;">
+                            <li><a href="{{ route('employee.create') }}" class="#">Create Employee</a></li>
+                            <li><a href="{{ route('employee.index') }}" class="#">List of Employee</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title " href="javascript:void(0)"><i
                                 data-feather="airplay"></i><span>Service</span></a>
                         <ul class="nav-submenu menu-content" style="display: none;">
                             <li><a href="{{ route('service.create') }}" class="#">Service Form</a></li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\EmployeeController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
@@ -21,4 +22,11 @@ Route::prefix('service')->group(function () {
     Route::post('/store', [ServiceController::class, 'store']);
     Route::post('/{id}', [ServiceController::class, 'update']);
     Route::delete('/delete/{id}', [ServiceController::class, 'destroy']);
+});
+//employee
+Route::prefix('employee')->group(function () {
+    Route::get('/', [EmployeeController::class, 'index']);
+    Route::post('/store', [EmployeeController::class, 'store']);
+    Route::post('/{id}', [EmployeeController::class, 'update']);
+    Route::delete('/delete/{id}', [EmployeeController::class, 'destroy']);
 });
