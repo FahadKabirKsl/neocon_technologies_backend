@@ -38,10 +38,10 @@
                     </li> --}}
                     <li class="dropdown">
                         <a class="nav-link menu-title " href="javascript:void(0)"><i
-                                data-feather="airplay"></i><span>Dummy</span></a>
+                                data-feather="airplay"></i><span>Employee</span></a>
                         <ul class="nav-submenu menu-content" style="display: none;">
-                            <li><a href="#" class="#">Create</a></li>
-                            <li><a href="#" class="#">List of </a></li>
+                            <li><a href="{{ route('employee.create') }}" class="#">Create Employee</a></li>
+                            <li><a href="{{ route('employee.index') }}" class="#">List of Employee</a></li>
                         </ul>
                     </li>
                 </ul>
