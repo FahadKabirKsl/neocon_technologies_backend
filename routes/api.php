@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\CaseController;
 use App\Http\Controllers\api\EmployeeController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\AuthController;
@@ -15,7 +16,14 @@ Route::post('/registration', [AuthController::class, 'registration']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
-
+//case-study
+Route::prefix('case-study')->group(function () {
+    Route::get('/', [CaseController::class, 'index']);
+    Route::get('/create', [CaseController::class, 'create']);
+    Route::post('/store', [CaseController::class, 'store']);
+    Route::post('/{id}', [CaseController::class, 'update']);
+    Route::delete('/delete/{id}', [CaseController::class, 'destroy']);
+});
 //service
 Route::prefix('service')->group(function () {
     Route::get('/', [ServiceController::class, 'index']);
