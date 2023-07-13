@@ -52,6 +52,15 @@
                             <li><a href="{{ route('service.index') }}" class="#">List of Service</a></li>
                         </ul>
                     </li>
+                    {{-- product --}}
+                    <li class="dropdown">
+                        <a class="nav-link menu-title " href="javascript:void(0)"><i
+                                data-feather="airplay"></i><span>Product</span></a>
+                        <ul class="nav-submenu menu-content" style="display: none;">
+                            <li><a href="{{ route('product.create') }}" class="#">Product Form</a></li>
+                            <li><a href="{{ route('product.index') }}" class="#">List of Product</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
