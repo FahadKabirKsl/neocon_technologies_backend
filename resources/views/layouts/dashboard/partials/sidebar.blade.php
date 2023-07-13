@@ -44,6 +44,22 @@
                             <li><a href="{{ route('caseStudy.index') }}" class="#">List of Case Studies</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title " href="javascript:void(0)"><i
+                                data-feather="airplay"></i><span>Employee</span></a>
+                        <ul class="nav-submenu menu-content" style="display: none;">
+                            <li><a href="{{ route('employee.create') }}" class="#">Create Employee</a></li>
+                            <li><a href="{{ route('employee.index') }}" class="#">List of Employee</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title " href="javascript:void(0)"><i
+                                data-feather="airplay"></i><span>Service</span></a>
+                        <ul class="nav-submenu menu-content" style="display: none;">
+                            <li><a href="{{ route('service.create') }}" class="#">Service Form</a></li>
+                            <li><a href="{{ route('service.index') }}" class="#">List of Service</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
