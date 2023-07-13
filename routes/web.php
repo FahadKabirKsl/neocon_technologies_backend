@@ -3,6 +3,7 @@
 use App\Http\Controllers\dashboard\CaseController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\EmployeeController;
+use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
         Route::put('/{id}', [ServiceController::class, 'update'])->name('service.update');
         Route::delete('/delete/{id}', [ServiceController::class, 'destroy'])->name('service.destroy');
+    });
+    //Product
+    Route::prefix('product')->group(function () {
+        Route::get('/index', [ProductController::class, 'index'])->name('product.index');
+        Route::get('/create', [ProductController::class, 'create'])->name('product.create');
+        Route::post('/store', [ProductController::class, 'store'])->name('product.store');
+        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+        Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
 });
 

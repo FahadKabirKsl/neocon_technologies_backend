@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\CaseController;
 use App\Http\Controllers\api\EmployeeController;
+use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
@@ -37,4 +38,12 @@ Route::prefix('employee')->group(function () {
     Route::post('/store', [EmployeeController::class, 'store']);
     Route::post('/{id}', [EmployeeController::class, 'update']);
     Route::delete('/delete/{id}', [EmployeeController::class, 'destroy']);
+});
+
+//product
+Route::prefix('product')->group(function () {
+    Route::get('/', [ProductController::class, 'index']);
+    Route::post('/store', [ProductController::class, 'store']);
+    Route::post('/{id}', [ProductController::class, 'update']);
+    Route::delete('/delete/{id}', [ProductController::class, 'destroy']);
 });
