@@ -10,7 +10,7 @@
         @slot('bredcrumb_title')
             Home
         @endslot
-        <li class="breadcrumb-item">Case-Study</li>caseStudy
+        <li class="breadcrumb-item">Case-Study</li>
         <li class="breadcrumb-item">List of Case-Studies</li>
     @endcomponent
     <div class="container">
