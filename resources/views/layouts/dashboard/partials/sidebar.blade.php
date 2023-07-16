@@ -69,6 +69,15 @@
                             <li><a href="{{ route('product.index') }}" class="#">List of Product</a></li>
                         </ul>
                     </li>
+                    {{-- review --}}
+                    <li class="dropdown">
+                        <a class="nav-link menu-title " href="javascript:void(0)"><i
+                                data-feather="airplay"></i><span>Review</span></a>
+                        <ul class="nav-submenu menu-content" style="display: none;">
+                            <li><a href="{{ route('review.create') }}" class="#">Review Form</a></li>
+                            <li><a href="{{ route('review.index') }}" class="#">List of Review</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

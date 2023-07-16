@@ -12,6 +12,7 @@
 <!-- Responsive css-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom-datatable.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom-rating.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatable-extension.css') }}">
 <!-- Plugins css Ends-->
