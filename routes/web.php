@@ -4,6 +4,7 @@ use App\Http\Controllers\dashboard\CaseController;
 use App\Http\Controllers\dashboard\ServiceController;
 use App\Http\Controllers\dashboard\EmployeeController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\dashboard\ReviewController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
         Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    });
+    //Product
+    Route::prefix('review')->group(function () {
+        Route::get('/index', [ReviewController::class, 'index'])->name('review.index');
+        Route::get('/create', [ReviewController::class, 'create'])->name('review.create');
+        Route::post('/store', [ReviewController::class, 'store'])->name('review.store');
+        Route::get('/edit/{id}', [ReviewController::class, 'edit'])->name('review.edit');
+        Route::put('/{id}', [ReviewController::class, 'update'])->name('review.update');
+        Route::delete('/delete/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
     });
 });
 

@@ -4,7 +4,9 @@ use App\Http\Controllers\api\CaseController;
 use App\Http\Controllers\api\EmployeeController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ServiceController;
+use App\Http\Controllers\api\ReviewController;
 use App\Http\Controllers\AuthController;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,4 +48,11 @@ Route::prefix('product')->group(function () {
     Route::post('/store', [ProductController::class, 'store']);
     Route::post('/{id}', [ProductController::class, 'update']);
     Route::delete('/delete/{id}', [ProductController::class, 'destroy']);
+});
+//review
+Route::prefix('review')->group(function () {
+    Route::get('/', [ReviewController::class, 'index']);
+    Route::post('/store', [ReviewController::class, 'store']);
+    Route::post('/{id}', [ReviewController::class, 'update']);
+    Route::delete('/delete/{id}', [ReviewController::class, 'destroy']);
 });
