@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
-    //Product
+    //review
     Route::prefix('review')->group(function () {
         Route::get('/index', [ReviewController::class, 'index'])->name('review.index');
         Route::get('/create', [ReviewController::class, 'create'])->name('review.create');
@@ -69,6 +69,11 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}', [ReviewController::class, 'update'])->name('review.update');
         Route::delete('/delete/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
     });
+    // //contact
+    // Route::prefix('contact')->group(function(){
+    //     Route::get()
+    // });
+
 });
 
 require __DIR__ . '/auth.php';
