@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 //web
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.authentication.login.login');
 });
 
 Route::middleware('auth')->group(function () {

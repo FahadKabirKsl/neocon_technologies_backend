@@ -124,7 +124,7 @@ ul {
 }
 
 a {
-    color: #24695c;
+    color: #ff0000;
     text-decoration: none;
 }
 a:hover {
@@ -15764,7 +15764,7 @@ strong ~ p {
 .login-form .form-group .input-group-text {
     background-color: rgba(36, 105, 92, 0.1);
     border: none;
-    color: #24695c;
+    color: #fe3b00;
 }
 .login-form .form-group input {
     -webkit-transition: all 0.3s ease;
@@ -55148,4 +55148,18 @@ span.twitter-typeahead .tt-suggestion:active {
 .btn-orange:hover {
     background-color: black;
     color:white;
+}
+.btn-neocon{
+    background-color: #fe3b00;
+    color: white;
+}
+.btn-neocon:hover {
+    background-color: black;
+    color: white;
+}
+.text-neocon{
+    color: #fe3b00;
+}
+.bg-neocon{
+    color: #fe3b00;
 }
