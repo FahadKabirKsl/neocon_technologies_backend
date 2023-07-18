@@ -5,6 +5,7 @@ use App\Http\Controllers\api\EmployeeController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ServiceController;
 use App\Http\Controllers\api\ReviewController;
+use App\Http\Controllers\api\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -55,4 +56,11 @@ Route::prefix('review')->group(function () {
     Route::post('/store', [ReviewController::class, 'store']);
     Route::post('/{id}', [ReviewController::class, 'update']);
     Route::delete('/delete/{id}', [ReviewController::class, 'destroy']);
+});
+//contact
+Route::prefix('contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index']);
+    Route::post('/store', [ContactController::class, 'store']);
+    Route::post('/{id}', [ContactController::class, 'update']);
+    Route::delete('/delete/{id}', [ContactController::class, 'destroy']);
 });

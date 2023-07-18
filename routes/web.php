@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 //web
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.authentication.login.login');
 });
 
 Route::middleware('auth')->group(function () {
@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
     });
-    //Product
+    //review
     Route::prefix('review')->group(function () {
         Route::get('/index', [ReviewController::class, 'index'])->name('review.index');
         Route::get('/create', [ReviewController::class, 'create'])->name('review.create');

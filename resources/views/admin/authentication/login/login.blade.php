@@ -36,10 +36,11 @@
                                 <x-input-label for="password" :value="__('Password')" />
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="icon-lock"></i></span>
-                                    <x-text-input class="form-control" type="password" name="password" required
-                                        autocomplete="current-password" />
-
-                                    <div class="show-hide"><span class="show"> </span></div>
+                                    <x-text-input class="form-control" type="password" name="password" required autocomplete="current-password" id="password" />
+                            
+                                    <div class="show-hide">
+                                        <span class="show" onclick="togglePasswordVisibility()"></span>
+                                    </div>
                                     @error('password')
                                         <div class="alert alert-danger mt-2 w-100">{{ $message }}</div>
                                     @enderror
@@ -50,10 +51,10 @@
                                     <input id="checkbox1" type="checkbox" />
                                     <label for="checkbox1">Remember password</label>
                                 </div>
-                                <a class="link" href="#">Forgot password?</a>
+                                <a class="link text-neocon" href="#">Forgot password?</a>
                             </div>
                             <div class="form-group">
-                                <x-primary-button class="btn btn-primary btn-block">
+                                <x-primary-button class="btn btn-neocon btn-block">
                                     {{ __('Log in') }}
                                 </x-primary-button>
                             </div>
@@ -80,7 +81,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <p>Don't have account?<a class="ms-2" href="{{ route('register') }}">Create Account</a></p>
+                            <p>Don't have account?<a class="ms-2 text-neocon" href="{{ route('register') }}">Create
+                                    Account</a></p>
                         </form>
                     </div>
                 </div>
@@ -90,5 +92,20 @@
 
 
     @push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = $("#password");
+            var showHideIcon = $(".show-hide span");
+    
+            if (passwordInput.attr("type") === "password") {
+                passwordInput.attr("type", "text");
+                showHideIcon.addClass("hide");
+            } else {
+                passwordInput.attr("type", "password");
+                showHideIcon.removeClass("hide");
+            }
+        }
+    </script>
     @endpush
 @endsection
