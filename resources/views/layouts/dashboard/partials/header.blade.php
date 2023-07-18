@@ -5,12 +5,12 @@
                         src="{{ asset('assets/images/dashboard/neocon_technologies_logo.svg') }}" alt=""></a>
                 {{-- <span style="color:#262626; padding" class="mx-4"><b>Admin Panel</b></span> --}}
             </div>
-            <div class="dark-logo-wrapper"><a href="#route_index"><img class="img-fluid"
+            <div class="dark-logo-wrapper"><a href="{{ route('dashboard') }}"><img class="img-fluid"
                         src="{{ asset('assets/images/dashboard/neocon_technologies_logo.svg') }}" alt=""></a>
             </div>
-            <div class="toggle-sidebar">
+            <div class="toggle-sidebar ms-3">
                 <i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle"
-                    style="color: #FF6536"></i>
+                    style="color:#FF6536"></i>
             </div>
         </div>
         <div class="left-menu-header col">
