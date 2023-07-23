@@ -19,38 +19,40 @@
                         <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST">
                             @csrf
                             <div class="d-flex row mb-4">
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <x-input-label class="form-label" for="name" :value="__('Name')" />
-                                    <span class="text-danger">(*)</span>
                                     <x-text-input class="form-control" id="name" type="text"
-                                        placeholder="Enter your name here..." required="" name="name" />
+                                        placeholder="Enter your name here..." name="name" />
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <x-input-label class="form-label" for="title" :value="__('Title')" />
-                                    <span class="text-danger">(*)</span>
                                     <x-text-input class="form-control" id="title" type="text"
-                                        placeholder="Enter your title here..." required="" name="title" />
+                                        placeholder="Enter your title here..." name="title" />
                                 </div>
-                                <div class="col-sm-4">
-                                    <x-input-label class="form-label" for="image" :value="__('Image')" />
-                                    <span class="text-danger">(*)</span>
-                                    <x-text-input class="form-control" id="image" type="file" required=""
-                                        name="image" />
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-sm-6">
+                                    <x-input-label class="form-label" for="single_image" :value="__('Single Image')" />
+                                    <x-text-input class="form-control" id="single_image" type="file"
+                                        name="single_image" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <x-input-label class="form-label" for="image" :value="__('Multiple Product Images')" />
+                                    <x-text-input class="form-control" id="image" type="file" multiple
+                                        name="image[]" />
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
                                     <x-input-label class="form-label" for="description" :value="__('Description')" />
-                                    <span class="text-danger">(*)</span>
-                                    <textarea class="form-control" id="description" name="description" required=""></textarea>
+                                    <textarea class="form-control" id="description" name="description"></textarea>
                                 </div>
                             </div>
 
                             <div class="row mt-4">
                                 <div class="col">
-                                    <x-primary-button href="#" class="btn btn-primary">Save</x-primary-button>
-                                    <x-secondary-button href="#" class="btn btn-secondary">Cancel
-                                    </x-secondary-button>
+                                    <x-primary-button href="#" class="btn btn-neocon rounded">Create
+                                    </x-primary-button>
                                 </div>
                             </div>
                         </form>
