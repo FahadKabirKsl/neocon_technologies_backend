@@ -20,8 +20,15 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->markdown('emails.contact_email')
-            ->subject('Neocon Technologies Limited - Contact With Us');
+        return $this->subject('Confirmation: Your Inquiry has been received')
+            ->view('emails.contact_email')
+            ->with([
+                'name' => $this->name,
+                'email' => $this->email,
+                'phoneNumber' => $this->phoneNumber,
+                'inquiry' => $this->inquiry,
+                'reason' => $this->reason,
+            ]);
     }
 
     public function __construct(
@@ -44,19 +51,19 @@ class ContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Neocon Technologies Limited - Contact Mail',
+            subject: 'Contact Us Mail Confirmation',
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
+    // /**
+    //  * Get the message content definition.
+    //  */
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'view.name',
+    //     );
+    // }
 
     /**
      * Get the attachments for the message.

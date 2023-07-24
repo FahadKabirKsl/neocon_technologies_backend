@@ -27,7 +27,7 @@ class ContactController extends Controller
         $contact->reason = $request->input('reason');
         $contact->save();
 
-        Mail::to('#')->send(new ContactMail(
+        Mail::to($contact->email)->send(new ContactMail(
             $contact->name,
             $contact->email,
             $contact->phoneNumber,
