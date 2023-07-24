@@ -43,8 +43,8 @@
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Title</th>
+                                        <th>Sub Header</th>
                                         <th>Description</th>
-                                        <th>Link</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -79,7 +79,7 @@
                                                     <span id="collapseLinkText{{ $paper->id }}">See More</span>
                                                 </div>
                                             </td>
-                                            <td>{{ $paper->link }}</td>
+                                            <td>{{ $paper->subHeader }}</td>
                                             <td>
                                                 <div class="d-flex">
                                                     <div>

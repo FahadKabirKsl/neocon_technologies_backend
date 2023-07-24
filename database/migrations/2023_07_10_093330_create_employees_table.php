@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('designation');
             $table->string('name');
             $table->string('image');
-            $table->text('heading')->nullable();
-            $table->text('message')->nullable();
             $table->longText('about');
             $table->timestamps();
         });

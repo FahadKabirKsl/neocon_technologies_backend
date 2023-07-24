@@ -33,8 +33,6 @@ class EmployeeController extends Controller
                 'name' => $request->name,
                 'designation' => $request->designation,
                 'about' => $request->about,
-                'heading' => $request->heading,
-                'message' => $request->message,
                 'image' => $image_path,
             ]
         );
@@ -53,8 +51,6 @@ class EmployeeController extends Controller
         $employee->name = $request->input('name');
         $employee->designation = $request->input('designation');
         $employee->about = $request->input('about');
-        $employee->heading = $request->input('heading');
-        $employee->message = $request->input('message');
 
         if ($request->hasFile('image')) {
             if ($employee->image) {

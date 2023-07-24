@@ -42,8 +42,8 @@
                                 <div class="col-lg-6">
                                     <x-input-label class="form-label" for="name" :value="__('Name')" />
                                     <x-text-input class="form-control" id="name" type="text"
-                                        placeholder="Enter your name here..." required=""
-                                        value="{{ $caseStudies->name }}" name="name" />
+                                        placeholder="Enter your name here..." value="{{ $caseStudies->name }}"
+                                        name="name" />
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -54,9 +54,10 @@
                                         name="title" />
                                 </div>
                                 <div class="col-sm-6">
-                                    <x-input-label class="form-label" for="link" :value="__('Link')" />
-                                    <x-text-input class="form-control" placeholder="https://..." id="link"
-                                        type="url" name="link" value="{{ $caseStudies->link }}" />
+                                    <x-input-label class="form-label" for="subHeader" :value="__('Sub Header')" />
+                                    <x-text-input class="form-control" placeholder="Enter your Sub Header here..."
+                                        id="subHeader" type="text" name="subHeader"
+                                        value="{{ $caseStudies->subHeader }}" />
                                 </div>
                             </div>
                             <div class="row mb-4">

@@ -43,8 +43,6 @@
                                         <th>Designation</th>
                                         <th>Name</th>
                                         <th>Image</th>
-                                        <th>Heading</th>
-                                        <th>Message</th>
                                         <th>About</th>
                                         <th>Action</th>
                                     </tr>
@@ -59,8 +57,6 @@
                                                 <img src="{{ asset('storage/' . $employee->image) }}" alt="Employee Image"
                                                     width="70">
                                             </td>
-                                            <td>{{ $employee->heading }}</td>
-                                            <td>{{ $employee->message }}</td>
                                             <td>
                                                 <div class="collapse-content" id="collapseContent{{ $employee->id }}">
                                                     {!! $employee->about !!}
