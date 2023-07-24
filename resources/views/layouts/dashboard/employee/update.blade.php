@@ -41,13 +41,11 @@
                             <div class="d-flex row mb-4">
                                 <div class="col">
                                     <x-input-label class="form-label" for="name" :value="__('Name')" />
-                                    <span class="text-danger">(*)</span>
                                     <x-text-input class="form-control" id="name" type="text"
                                         value="{{ $employee->name }}" name="name" />
                                 </div>
                                 <div class="col">
                                     <x-input-label class="form-label" for="designation" :value="__('Designation')" />
-                                    <span class="text-danger">(*)</span>
                                     <x-text-input class="form-control" id="designation" type="text"
                                         value="{{ $employee->designation }}" name="designation" />
                                 </div>
@@ -66,22 +64,7 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <x-input-label class="form-label" for="heading" :value="__('Heading')" />
-                                    <span class="text-danger">(*)</span>
-                                    <textarea class="form-control" id="heading" name="heading">{{ $employee->heading }}</textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <x-input-label class="form-label" for="message" :value="__('Message')" />
-                                    <span class="text-danger">(*)</span>
-                                    <textarea class="form-control" id="message" name="message">{{ $employee->message }}</textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
                                     <x-input-label class="form-label" for="about" :value="__('About')" />
-                                    <span class="text-danger">(*)</span>
                                     <textarea class="form-control" id="about" name="about">{!! $employee->about !!}</textarea>
                                 </div>
                             </div>

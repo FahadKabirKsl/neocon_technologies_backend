@@ -21,35 +21,12 @@
                             @csrf
                             @method('put')
                             <div class="row mb-4">
-                                <div class="col">
+                                <div class="col-lg-6">
                                     <x-input-label class="form-label" for="name" :value="__('Name')" />
                                     <x-text-input class="form-control" id="name" type="text"
                                         placeholder="Enter your name here..." name="name"
                                         value="{{ old('name', $service->name) }}" />
                                 </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <x-input-label class="form-label" for="description" :value="__('Description')" />
-                                    <span class="text-danger">(*)</span>
-                                    <textarea class="form-control" id="description" placeholder="Enter your description here..." name="description">{!! $service->description !!}</textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col-lg-6">
-                                    <x-input-label class="form-label" for="subName" :value="__('Sub Name')" />
-                                    <x-text-input class="form-control" id="subName" type="text"
-                                        placeholder="Enter your subName here..." name="subName"
-                                        value="{{ $service->subName }}" />
-                                </div>
-                                <div class="col-lg-6">
-                                    <x-input-label class="form-label" for="subTitle" :value="__('Sub Title')" />
-                                    <x-text-input class="form-control" id="subTitle" type="text"
-                                        placeholder="Enter your subTitle here..." name="subTitle"
-                                        value="{{ $service->subTitle }}" />
-                                </div>
-                            </div>
-                            <div class="row mb-4">
                                 <div class="col-lg-6">
                                     <x-input-label class="form-label" for="image" :value="__('Image')" />
                                     <x-text-input class="form-control" id="image" type="file" name="image" />
@@ -59,11 +36,18 @@
                                             width="40%">
                                     @endif
                                 </div>
-                                <div class="col-lg-6">
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <x-input-label class="form-label" for="description" :value="__('Description')" />
+                                    <textarea class="form-control" id="description" placeholder="Enter your description here..." name="description">{!! $service->description !!}</textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
                                     <x-input-label class="form-label" for="subDesc" :value="__('Sub Description')" />
                                     <textarea class="form-control" id="subDesc" placeholder="Enter your sub description here..." name="subDesc"
-                                    style="height: 150px;"
-                                    >{{ $service->subDesc }}</textarea>
+                                        style="height: 150px;">{{ $service->subDesc }}</textarea>
                                 </div>
                             </div>
                             <div class="row mt-4">

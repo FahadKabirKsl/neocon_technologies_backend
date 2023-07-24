@@ -105,9 +105,8 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col">
-                                    <x-primary-button href="#" class="btn btn-primary">Save</x-primary-button>
-                                    <x-secondary-button href="#" class="btn btn-secondary">Cancel
-                                    </x-secondary-button>
+                                    <x-primary-button href="#" class="btn btn-neocon rounded">Create
+                                    </x-primary-button>
                                 </div>
                             </div>
                         </form>

@@ -41,8 +41,6 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Description</th>
-                                        <th>Sub Name</th>
-                                        <th>Sub Title</th>
                                         <th>Image</th>
                                         <th>Sub Description</th>
                                         <th>Action</th>
@@ -73,8 +71,6 @@
                                                     <span id="collapseLinkText{{ $service->id }}">See More</span>
                                                 </div>
                                             </td>
-                                            <td>{{ $service->subName }}</td>
-                                            <td>{{ $service->subTitle }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $service->image) }}" alt="Services Image"
                                                     width="90">

@@ -34,7 +34,7 @@ class CaseController extends Controller
                 'name' => $request->name,
                 'title' => $request->title,
                 'description' => $request->description,
-                'link' => $request->link
+                'subHeader' => $request->subHeader
 
             ]
         );
@@ -50,7 +50,7 @@ class CaseController extends Controller
         $caseStudies->name = $request->input('name');
         $caseStudies->title = $request->input('title');
         $caseStudies->description = $request->input('description');
-        $caseStudies->link = $request->input('link');
+        $caseStudies->subHeader = $request->input('subHeader');
 
         if ($request->hasFile('image')) {
             if ($caseStudies->image) {

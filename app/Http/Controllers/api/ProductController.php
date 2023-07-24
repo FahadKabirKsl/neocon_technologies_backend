@@ -18,23 +18,32 @@ class ProductController extends Controller
     {
         $request->validate(
             [
-                'iamge' => 'image|mimes:png,jpg,jpeg,gif,svg|max:2048'
+                'image' => 'array',
+                'single_iamge' => 'image|mimes:png,jpg,jpeg,gif,svg|max:2048'
             ]
         );
-
-        $image_path = null;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $image_path = $file->storeAs('Created_Product_Images', $file->getClientOriginalName(), 'public');
+        //single image
+        $single_images = null;
+        if ($request->hasFile('single_image')) {
+            $file = $request->file('single_image');
+            $single_images = $file->storeAs('Created_Single_Images', $file->getClientOriginalName(), 'public');
         }
-        $products = Product::create(
-            [
-                'name' => $request->name,
-                'title' => $request->title,
-                'image' => $image_path,
-                'description' => $request->description
-            ]
-        );
+        //multiple_image
+        $images = [];
+        if ($request->hasFile('image')) {
+            foreach ($request->file('image') as $file) {
+                $image_path = $file->storeAs('Created_Multiple_Product_Images', $file->getClientOriginalName(), 'public');
+                $images[] = $image_path;
+            }
+        }
+
+        $products = Product::create([
+            'name' => $request->name,
+            'title' => $request->title,
+            'image' => $images, //multiple_image
+            'single_image' => $single_images,
+            'description' => $request->description,
+        ]);
         return response()->json(
             [
                 'message' => 'Product Created Successfully',
@@ -49,13 +58,41 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->title = $request->input('title');
         $product->description = $request->input('description');
+
+        //single image
+        $single_image_path = null;
+        if ($request->hasFile('single_image')) {
+            $file = $request->file('single_image');
+            $single_image_path = $file->storeAs('Updated_Single_Images', $file->getClientOriginalName(), 'public');
+        }
+
+        //multiple_image
+        $existingImages = $product->image ?? []; // Get the existing images or initialize an empty array
+
         if ($request->hasFile('image')) {
-            if ($product->image) {
-                Storage::delete($product->image);
+            $newImages = [];
+            foreach ($request->file('image') as $file) {
+                $multiple_image_path = $file->storeAs('Updated_Product_Images', $file->getClientOriginalName(), 'public');
+                $newImages[] = str_replace('public/', '', $multiple_image_path);
             }
-            $file = $request->file('image');
-            $image_path = $file->storeAs('Updated_Product_Images', $file->getClientOriginalName(), 'public');
-            $product->image = str_replace('public/', '', $image_path);
+
+            // Merge new images with existing images
+            $product->image = array_merge($existingImages, $newImages);
+        }
+
+        // Check if any images are to be removed
+        if ($request->has('remove_images')) {
+            $imagesToRemove = $request->input('remove_images');
+            foreach ($imagesToRemove as $index) {
+                if (isset($existingImages[$index])) {
+                    $imagePath = 'public/' . $existingImages[$index];
+                    if (Storage::exists($imagePath)) {
+                        Storage::delete($imagePath);
+                    }
+                    unset($existingImages[$index]); // Remove the image from the existing images array
+                }
+            }
+            $product->image = array_values($existingImages); // Reindex the array after removing elements 
         }
         $product->save();
         return response()->json(

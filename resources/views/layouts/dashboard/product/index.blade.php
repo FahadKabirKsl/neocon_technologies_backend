@@ -41,7 +41,8 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Title</th>
-                                        <th>Image</th>
+                                        <th>Single Image</th>
+                                        <th>Multiple Product Image</th>
                                         <th>Description</th>
                                         <th>Action</th>
                                     </tr>
@@ -52,8 +53,21 @@
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->title }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image"
-                                                    width="70">
+                                                <img src="{{ asset('storage/' . $product->single_image) }}"
+                                                    alt="Single Image" width="70">
+                                            </td>
+                                            <td>
+                                                @if (is_array($product->image))
+                                                    @foreach ($product->image as $imagePath)
+                                                        <img class="shadow bg-body border-2 rounded"
+                                                            src="{{ asset('storage/' . $imagePath) }}"
+                                                            alt="Multiple Product Images" width="100">
+                                                    @endforeach
+                                                @else
+                                                    <img class="shadow bg-body rounded"
+                                                        src="{{ asset('storage/' . $product->image) }}"
+                                                        alt="Multiple Product Images" width="100">
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="collapse-content" id="collapseContent{{ $product->id }}">

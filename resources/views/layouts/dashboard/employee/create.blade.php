@@ -21,7 +21,6 @@
                                 <div class="d-flex row mb-4">
                                     <div class="col">
                                         <x-input-label class="form-label" for="type" :value="__('Type')" />
-                                        <span class="text-danger">(*)</span>
                                         <select class="form-control" id="type" name="type" required>
                                             <option class="select-placeholder" value="" disabled selected>Select
                                                 Type</option>
@@ -31,51 +30,32 @@
                                     </div>
                                     <div class="col">
                                         <x-input-label class="form-label" for="designation" :value="__('Designation')" />
-                                        <span class="text-danger">(*)</span>
                                         <x-text-input class="form-control" id="designation" type="text"
-                                            placeholder="Enter your designation here..." required=""
-                                            name="designation" />
+                                            placeholder="Enter your designation here..." name="designation" />
                                     </div>
                                 </div>
                                 <div class="d-flex row mb-4">
                                     <div class="col">
                                         <x-input-label class="form-label" for="name" :value="__('Name')" />
-                                        <span class="text-danger">(*)</span>
                                         <x-text-input class="form-control" id="name" type="text"
-                                            placeholder="Enter your name here..." required="" name="name" />
+                                            placeholder="Enter your name here..." name="name" />
                                     </div>
                                     <div class="col">
                                         <x-input-label class="form-label" for="image" :value="__('Image')" />
-                                        <span class="text-danger">(*)</span>
-                                        <x-text-input class="form-control" id="image" type="file" required=""
-                                            name="image" />
-                                    </div>
-                                </div>
-                                <div class="d-flex row mb-4">
-                                    <div class="col">
-                                        <x-input-label class="form-label" for="heading" :value="__('Heading')" />
-                                        <span class="text-danger">(*)</span>
-                                        <textarea class="form-control" id="heading" placeholder="Enter your heading here..." name="heading" required=""></textarea>
-                                    </div>
-                                    <div class="col">
-                                        <x-input-label class="form-label" for="message" :value="__('Message')" />
-                                        <span class="text-danger">(*)</span>
-                                        <textarea class="form-control" id="message" placeholder="Enter your message here..." name="message" required=""></textarea>
+                                        <x-text-input class="form-control" id="image" type="file" name="image" />
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <x-input-label class="form-label" for="about" :value="__('About')" />
-                                        <span class="text-danger">(*)</span>
                                         <textarea class="form-control" id="about" placeholder="Enter your about here..." name="about" required=""></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mt-4">
                                     <div class="col">
-                                        <x-primary-button href="#" class="btn btn-primary">Save</x-primary-button>
-                                        <x-secondary-button href="#" class="btn btn-secondary">Cancel
-                                        </x-secondary-button>
+                                        <x-primary-button href="#" class="btn btn-neocon rounded">Create
+                                        </x-primary-button>
                                     </div>
                                 </div>
                             </form>

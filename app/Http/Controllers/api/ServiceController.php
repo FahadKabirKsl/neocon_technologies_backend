@@ -12,8 +12,8 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $services = Service::all();
-         // Iterate through each service and update the "name" value
-         foreach ($services as $service) {
+        // Iterate through each service and update the "name" value
+        foreach ($services as $service) {
             $service->name = json_decode($service->name);
         }
         return response()->json($services, 200);
@@ -34,8 +34,6 @@ class ServiceController extends Controller
             [
                 'name' => $request->name,
                 'description' => $request->description,
-                'subName' => $request->subName,
-                'subTitle' => $request->subTitle,
                 'image' => $image_path,
                 'subDesc' => $request->subDesc,
             ]
@@ -58,8 +56,6 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $service->name = $request->input('name');
         $service->description = $request->input('description');
-        $service->subName = $request->input('subName');
-        $service->subTitle = $request->input('subTitle');
         $service->subDesc = $request->input('subDesc');
 
         if ($request->hasFile('image')) {

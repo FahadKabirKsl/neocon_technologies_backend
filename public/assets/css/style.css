@@ -55163,3 +55163,15 @@ span.twitter-typeahead .tt-suggestion:active {
 .bg-neocon{
     color: #fe3b00;
 }
+
+/*--------------------product_image_remove_icon-------------------- */
+.image-item {
+    position: relative;
+}
+
+.remove-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 8px;
+}

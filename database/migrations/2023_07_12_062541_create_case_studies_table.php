@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->text('title');
+            $table->string('subHeader')->nullable();
             $table->longText('description');
-            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
